@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anispot Login</title>
+  <style>
+     body {
+      background: linear-gradient(135deg, #a0c7eb,  #e1eefc, #88bdf6);
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      
+    }
+
+    form {
+      padding: 50px;
+      width: 100%;
+      max-width: 360px;
+   
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    h1 {
+      text-shadow: 1px 1px #2164d6;
+      font-size: 48px;
+      color: #2164d6;
+      margin-bottom: 15px;
+      margin-top: 10%;
+    }
+
+    p {
+      font-size: 36px;
+      margin-top: 10%;
+      margin-bottom: 10%;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      margin-bottom: 10;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+.button-main {
+  display: block;
+  width: 50%;
+  margin: 20px auto;
+  margin-top: 10%;
+  margin-bottom: 15%; /* ← これがポイント！ */
+  color: #ebedee;
+  background-color: #002f4d;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+  
+}
+
+    .button-main:hover {
+      background-color: #ef5e4b;
+      color: #feffff;
+    }
+    
+    .links {
+      margin-top: 15px;
+      text-align: left;
+      position: relative;
+    }
+
+    .button-small {
+      color: #2164d6;
+      font-size: 16px;
+      text-decoration: none;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .button-small:hover {
+      text-decoration: underline;
+    }
+
+    .button-container {
+      display: block;
+      text-align: center;
+      font-size: 28px;
+      margin-top: 10%;
+      color: #0000ff;
+      text-decoration: none;
+      position: relative;
+      z-index: 2;
+    }
+    a.button-container:hover {
+      text-decoration: underline;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 12px;
+      display: none;
+      text-align: left;
+      margin-top: 3px;
+    }
+        .main-image {
+      width: 100%;
+      height: 125px;
+      margin-top: 15%;
+      object-fit: cover;
+      box-shadow:  0 0 2px  #0c0c0c;
+    }
+
+    /* 🐰 Con thỏ nhỏ rung nhẹ trong khung cạnh nút LOGIN */
+  .rabbit {
+  position: absolute;
+  bottom: 5px;  /* cách đáy ảnh */
+  right: 60px;   /* cách phải ảnh */
+  width: 50px;
+  animation: shake 3s infinite ease-in-out;
+}
+
+
+    @keyframes shake {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(3deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(-3deg); }
+      100% { transform: rotate(0deg); }
+    }
+  </style>
+</head>
+<body>
+  <form id="loginForm" novalidate>
+    <h1>Anispot</h1>
+      <div class="image-wrapper" style="position: relative; width: 100%;">
+    <img src="image/japan.jpg" alt="背景" class="main-image">
+    <img src="image/tho.png" alt="Rabbit" class="rabbit">
+  </div>
+    <p>LOGIN</p>
+
+    <label>メールアドレス</label>
+    <input type="email" name="email" placeholder="anispot@gmail.com" required>
+    <span class="error-message">正しい Gmail アドレスを入力してください</span>
+
+    <label>パスワード</label>
+    <input type="password" name="password" placeholder="********" required>
+    <span class="error-message">パスワードは8文字以上入力してください</span>
+
+    <button type="submit" class="button-main">ログイン</button>
+
+    <div class="links">
+      <a href="forgotpasswork.html" class="button-small">パスワードを忘れ?</a>
+      <a href="forgotid.html" class="button-small">メールとIDを忘れ?</a>
+      <a href="newmember.html" class="button-container">新規登録</a>
+    </div>
+
+    
+  </form>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const emailInput = form.querySelector('input[name="email"]');
+    const passwordInput = form.querySelector('input[name="password"]');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      let valid = true;
+
+      const emailError = emailInput.nextElementSibling;
+      const emailValue = emailInput.value.trim();
+      if (!emailValue || !emailValue.endsWith("@gmail.com")) {
+        emailError.style.display = 'block';
+        valid = false;
+      } else {
+        emailError.style.display = 'none';
+      }
+
+      const passwordError = passwordInput.nextElementSibling;
+      if (!passwordInput.value || passwordInput.value.length < 8) {
+        passwordError.style.display = 'block';
+        valid = false;
+      } else {
+        passwordError.style.display = 'none';
+      }
+
+      if (valid) {
+        window.location.href = 'menu.html';
+      }
+    });
+  </script>
+</body>
+</html>

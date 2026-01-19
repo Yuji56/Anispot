@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>通知 - Anispot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="anispot.css" />
+    <link rel="stylesheet" href="index.css" />
+  <script defer src="App.js"></script>
+</head>
+
+<body id="notifications">
+  <header>
+    <div class="APP">
+        <div class="appname">Anispot</div>
+    </div>
+
+    <div class="tabs">
+        <div class="notification-container">
+          <h3>通知</h3>
+        </div>
+    </div>
+  </header>
+
+  <main class="notify-container">
+    <div class="notify-item" onclick="location.href='follow_notifications.html'"><i class="fa-solid fa-user-plus"></i> フォロー</div>
+    <div class="notify-item" onclick="location.href='follower_notifications.html'"><i class="fa-solid fa-users"></i> フォロワー</div>
+    <div class="notify-item" onclick="location.href='like_notifications.html'"><i class="fa-solid fa-heart"></i> いいね</div>
+    <div class="notify-item" onclick="location.href='comment_notifications.html'"><i class="fa-solid fa-comment"></i> コメント</div>
+    <div class="notify-item" onclick="location.href='bookmark_notifications.html'"><i class="fa-solid fa-bookmark"></i> 保存済リスト</div>
+  </main>
+
+  <div class="bottom-nav">
+      <button class="icon" onclick="location.href='index.html'"><img src="img/c.png"></button>
+      <button class="icon" onclick="location.href='notifications.html'"><img src="img/d.png"></button>
+      <button class="icon" onclick="location.href='account.html'"><img src="img/e.png"></button>
+    </div>
+</body>
+</html>
+
+

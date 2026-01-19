@@ -1,0 +1,274 @@
+/* 通知画面 */
+/* #notifications .notify-container {
+  margin: 20px 12px;
+} */
+#notifications .APP{
+  display:flex;
+  align-items: center;
+}
+#notifications .appname{
+  font-size: 30px;
+  color: #2164d6;
+  font-weight: 900;
+  text-shadow: 1px 1px #2164d6;
+}
+#notifications .notify-item {
+  /* background: #fff;
+  border-radius: 12px;
+  padding: 40px 20px;
+  margin: 0 1rem 14px 1rem;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 17px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05); */
+  
+  width: 100%;
+  height: 80px;
+  resize: none;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+#notifications .notify-item i {
+  font-size: 22px;
+  color: #555;
+}
+
+
+
+
+
+
+#commentModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 3000;
+  justify-content: center;
+  align-items: flex-end;
+}
+#commentModal .modal-content {
+  width: 100%;
+  height: 80%;
+  max-width: none;
+  background-color: #dbe9ed;
+  color: #000;
+  border-radius: 18px 18px 0 0;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  animation: slideUp 0.25s ease;
+}
+#commentModal .modal-content h3{
+  padding-bottom: 1rem;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.modal-content {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+#confirmRepostBtn{
+  background-color: #ff7b00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+#cancelRepostBtn{
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+#confirmDeleteBtn{
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+#cancelDeleteBtn{
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.modal-content textarea {
+  width: 100%;
+  height: 80px;
+  resize: none;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.modal-actions {
+  position: sticky;
+  bottom: 0;
+  padding: 12px 0;
+  border-bottom: 3px solid #ccc;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+.modal-actions button {
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 14px;
+  cursor: pointer;
+}
+#commentText {
+  width: 100%;
+  min-height: 70px;
+  resize: none;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #fff;
+  color: #000;
+  margin-bottom: 10px;
+}
+#sendComment {
+  background: #ff7b00;
+  color: white;
+}
+#closeModal {
+  background: #333;
+  color: white;
+}
+#sendComment,
+#closeModal {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.post-icons button {
+  margin-right: 12px;
+}
+
+
+
+/* 投稿入力 */
+#index .post-input {
+  background: #fff;
+  margin: 0 10px 15px 10px;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+#index .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#index .user-info .avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+#index .post-icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 2rem 0 2rem;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+
+/* コメント */
+/* .comment-item{
+  background-color: #666;
+} */
+
+
+
+/* コメントレイアウト */
+
+    .ig-comment-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid #333;
+    }
+    .ig-comment-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .ig-comment-body {
+      flex: 1;
+    }
+    .ig-comment-user {
+      color: #000;
+      font-weight: bold;
+      margin-right: 6px;
+    }
+    .ig-comment-text {
+      color: #000;
+      word-break: break-word;
+    }
+    .ig-comment-actions {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 5px;
+      display: flex;
+      gap: 12px;
+    }
+    .ig-comment-likes {
+      cursor: pointer;
+    }
+    .ig-comment-reply {
+      cursor: pointer;
+    }
+    .ig-comment-like-icon {
+      margin-top: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      color: #ddd;
+    }
+    .ig-comment-like-icon.liked {
+      color: #ff4d4d;
+    }
