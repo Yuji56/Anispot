@@ -42,3 +42,9 @@ src/main/resources/*firebase-adminsdk*.json
 *.json
 !package.json
 
+
+# Secrets
+src/main/resources/*firebase-adminsdk*.json
+*.json
+!package.json
+
